@@ -20,11 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{BB0AD2CF-35B5-43A7-A3D2-26B0C1BC8D7B}</ProjectGuid>
+    <ProjectGuid>{E35163CE-3223-4F85-8C21-A30636B9CA5C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My1001ABFormat</RootNamespace>
+    <RootNamespace>A1005</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>A-1001</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
