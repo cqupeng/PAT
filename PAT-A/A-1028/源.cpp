@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<algorithm>
+#include<iostream>
 #include<vector>
 using namespace std;
 struct student {
@@ -12,6 +13,7 @@ bool cmp(student a, student b) {
 	else return strcmp(a.info[0], b.info[0])<0;
 }
 int main() {
+	ios::sync_with_stdio(false);
 	vector<student> input;
 	int N;
 	scanf("%d %d", &N, &C);
