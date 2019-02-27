@@ -23,7 +23,7 @@ int main() {
 		if (temp_ori == res) {
 			printf("Insertion Sort\n");
 			flag = 1;
-			sort(res.begin(), res.begin() + min(i + 1,N));
+			while(temp_ori==res) sort(res.begin(), res.begin() + min(++i,N));//要排序到与给定序列不一样的下一状态
 			break;
 		}
 	}
