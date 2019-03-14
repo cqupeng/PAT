@@ -4,7 +4,7 @@
 #include<algorithm>
 using namespace std;
 struct node {
-	int value, pre,add, next;
+	int value, add, next;
 };
 node link[111111];
 int main() {
@@ -16,31 +16,27 @@ int main() {
 		link[add].add = add;
 		link[add].value = value;
 		link[add].next = next;
-		if (next != -1) link[next].pre = add;
 	}
-	link[root].pre = root;
 	int tempadd = root;
 	vector<node> remove;
 	unordered_map<int, int> hash;
+	vector<node> ans;
 	while (tempadd != -1) {
 		int tempvalue = link[tempadd].value;
 		if (hash[abs(tempvalue)] == 0) {
+			ans.push_back(link[tempadd]);
 			hash[abs(tempvalue)]++;
 		}
-		else {
-			link[link[tempadd].pre].next = link[tempadd].next;
-			if(link[tempadd].next!=-1) link[link[tempadd].next].pre = link[tempadd].pre;
-			remove.push_back(link[tempadd]);
-		}
+		else remove.push_back(link[tempadd]);
 		tempadd = link[tempadd].next;
 	}
-	printf("%05d %d ", root, link[root].value);
-	root = link[root].next;
-	while (root != -1) {
-		printf("%05d\n%05d %d ", root,root, link[root].value);
-		root = link[root].next;
+	if (ans.size() != 0) {
+		for (auto it = ans.begin(); it != ans.end(); it++) {
+			if (it == ans.begin()) printf("%05d %d ", it->add, it->value);
+			else printf("%05d\n%05d %d ", it->add, it->add, it->value);
+		}
+		printf("-1\n");
 	}
-	printf("-1\n");
 	for (auto it = remove.begin(); it != remove.end(); it++) {
 		if (it == remove.begin())
 			printf("%05d %d ", it->add, it->value);
